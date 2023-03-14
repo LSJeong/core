@@ -42,7 +42,7 @@ class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회X")
     void findBeanNameX(){
 //       ac.getBean("xxxx", MemberService.class);
-        MemberService xxxx = ac.getBean("xxxx", MemberService.class);
+        //MemberService xxxx = ac.getBean("xxxx", MemberService.class);
         assertThrows(NoSuchBeanDefinitionException.class,   //2. 이 에러가 나와야맞음
                 () -> ac.getBean("xxxx", MemberService.class));  //1.이걸 실행하면
     }
