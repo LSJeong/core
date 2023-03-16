@@ -23,9 +23,10 @@ import org.springframework.context.annotation.FilterType;
         //@Configuration도 스캔의 대상이 되는 이유? -> 소스코드 열어보면 @Component 애노테이션 붙어있음
 )
 public class AutoAppConfig {
-
+    /* MemoryMemberRepository 에서 @Component로 자동등록되므로 충돌에러남, 주석처리
     @Bean(name = "memoryMemberRepository")
     MemberRepository memberRepository(){
         return new MemoryMemberRepository();
     }
+     */
 }
