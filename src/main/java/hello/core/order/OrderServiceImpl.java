@@ -6,10 +6,12 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor  //final이 붙은 필드를 모아서 생성자를 자동으로 만들어준다.
 public class OrderServiceImpl implements OrderService{
 
    // private final MemberRepository memberRepository= new MemoryMemberRepository();
@@ -36,6 +38,8 @@ public class OrderServiceImpl implements OrderService{
         this.discountPolicy = discountPolicy;
     }
      */
+
+    /*  @RequiredArgsConstructor 에 의해서 자동 생성되므로 주석처
     @Autowired
     //생성자가 하나면 @Autowired 생략해도 자동 주입
     //DIP지킴(인터페이스만 의존), 생성자 주입(AppConfing에서 주입 관리)
@@ -43,6 +47,7 @@ public class OrderServiceImpl implements OrderService{
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+     */
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
